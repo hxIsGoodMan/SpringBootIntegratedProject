@@ -1,0 +1,49 @@
+server:
+  port: 8781
+
+
+#指定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#服务的名称
+spring:
+  application:
+    name: order-service
+
+#自定义负载均衡策略
+product-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+#修改调用超时时间
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 4000
+        readTimeout: 4000
+
+#把hystrix超时时间禁用
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+
+#execution.isolation.thread.timeoutInMilliseconds=4000
+
+#设置超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
