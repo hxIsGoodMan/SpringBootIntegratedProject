@@ -1,5 +1,5 @@
 
-#服务名称
+#鏈嶅姟鍚嶇О
 spring:
   application:
     name: config-server
@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/HmanDemo/config-server.git
-          username: 13265948041
-          password: huangxiong123
+          uri: 浣犵殑git鏈嶅姟鍣ㄥ湴鍧�
+          username: git璐﹀彿
+          password: 瀵嗙爜
           timeout: 5
           default-label: master
           search-paths: /**
@@ -17,7 +17,7 @@ spring:
 server:
   port: 9100
 
-#指定注册中心地址
+#鎸囧畾娉ㄥ唽涓績鍦板潃
 eureka:
   client:
     serviceUrl:
